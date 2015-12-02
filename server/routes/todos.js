@@ -1,6 +1,6 @@
 var express = require("express"), 
     routes = express.Router(),
-    db = require("./models");
+    db = require("../models");
 
 routes.get("/", function(req, res){
   db.Todo.find({}, function(err, todos){
@@ -35,7 +35,7 @@ routes.put("/:id", function(req, res){
       res.status(401).send({message: "Unauth­orized Request"});
     }
     todo.save();
-    res.status(200).send({message: "Todo successfully created"});
+    res.status(200).send(todo);
   });
 });
 

@@ -1,0 +1,9 @@
+<h3>All Todos</h3>
+<ul>
+  <li ng-repeat="todo in todos">
+    {{todo.task}}
+    <a href="/todos/{{todo._id}}/edit">Edit</a>
+  </li>
+</ul>
+
+<a href="/todos/new">Create a new Todo</a>
